@@ -354,3 +354,35 @@ body {
         font-size: 16px;
     }
 }
+
+/* test after this */
+/* Add these styles to your existing CSS */
+
+/* Improved mobile responsiveness for the student count section */
+@media (max-width: 640px) {
+    .flex-wrap {
+        flex-wrap: wrap;
+    }
+    
+    /* Adjust text size for smaller screens */
+    .text-sm {
+        font-size: 0.875rem;
+        line-height: 1.25rem;
+    }
+    
+    /* Adjust spacing for smaller screens */
+    .mt-8 {
+        margin-top: 1.5rem;
+    }
+    
+    /* Ensure the images are visible but not too large on small screens */
+    .w-10.h-10 {
+        width: 2rem;
+        height: 2rem;
+    }
+}
+
+/* Remove any remaining purple circles */
+.remove-decorative-circle {
+    display: none;
+}
