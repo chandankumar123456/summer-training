@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>45-Day Python + DSA Crash Course | Job-Ready Tech Skills</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
+    <!-- <link href="styles1.css" rel="stylesheet"> -->
+</head>
+
+<body>
+    <!-- Navigation -->
+    <nav class="bg-gray-900 py-4 px-6 fixed w-full z-50">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold gradient-text">PyDSA<span class="text-white">Mastery</span></a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#course" onclick="smoothScroll(event, 'course')"
+                    class="text-gray-300 hover:text-white transition">Course</a>
+                <a href="#highlights" onclick="smoothScroll(event, 'highlights')"
+                    class="text-gray-300 hover:text-white transition">Highlights</a>
+                <a href="#job-prep" onclick="smoothScroll(event, 'job-prep')"
+                    class="text-gray-300 hover:text-white transition">Job Prep</a>
+                <a href="#mentor" onclick="smoothScroll(event, 'mentor')"
+                    class="text-gray-300 hover:text-white transition">Mentor</a>
+                <a href="#testimonials" onclick="smoothScroll(event, 'testimonials')"
+                    class="text-gray-300 hover:text-white transition">Success Stories</a>
+
+            </div>
+            <button onclick="enrollNow()"
+                class="bg-gradient-to-r from-purple-600 to-cyan-500 text-white py-2 px-6 rounded-full font-semibold hover:shadow-lg transition hidden md:block">Enroll
+                Now</button>
+            <button class="md:hidden text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="hero" class="pt-32 pb-20 relative overflow-hidden code-bg">
+        <div class="absolute inset-0 bg-gradient-to-b from-gray-900 to-transparent opacity-90"></div>
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-12 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
+                        Master <span class="gradient-text">Python & DSA</span> in 45 Days – Land Your Dream Tech Job!
+                    </h1>
+                    <p class="text-xl text-gray-300 mb-8">
+                        A comprehensive crash course designed to make you job-ready with industry-relevant skills and
+                        hands-on practice.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="https://forms.gle/YOUR_GOOGLE_FORM_LINK" target="_blank"
+                            class="btn-primary text-white font-bold py-4 px-8 rounded-full text-lg">
+                            Enroll Now
+                        </a>
+
+                        <button onclick="scrollToCurriculum()"
+                            class="bg-transparent border-2 border-gray-400 text-white font-semibold py-4 px-8 rounded-full text-lg hover:border-white transition">
+                            View Curriculum
+                        </button>
+
+
+                    </div>
+                    <div class="mt-8 flex items-center">
+                        <div class="flex -space-x-2">
+                            <img src="images/student1.png" alt="Student"
+                                class="w-10 h-10 rounded-full border-2 border-gray-900" />
+                            <img src="images/student2.png" alt="Student"
+                                class="w-10 h-10 rounded-full border-2 border-gray-900" />
+                            <img src="images/student3.png" alt="Student"
+                                class="w-10 h-10 rounded-full border-2 border-gray-900" />
+
+                        </div>
+                        <p class="ml-4 text-gray-300">Join <span class="text-white font-semibold">1,200+</span> students
+                            who transformed their careers</p>
+                    </div>
+                </div>
+                <div class="md:w-1/2 relative">
+                    <div class="bg-gradient-to-tr from-purple-600/20 to-cyan-500/20 p-1 rounded-2xl backdrop-blur-sm">
+                        <div class="bg-gray-900/80 rounded-2xl p-8 backdrop-blur-sm border border-gray-800">
+                            <div class="text-gray-300 font-mono text-sm">
+                                <div class="flex items-center mb-4">
+                                    <div class="w-3 h-3 rounded-full bg-red-500 mr-2"></div>
+                                    <div class="w-3 h-3 rounded-full bg-yellow-500 mr-2"></div>
+                                    <div class="w-3 h-3 rounded-full bg-green-500 mr-2"></div>
+                                    <span class="text-gray-500 ml-2">python_dsa.py</span>
+                                </div>
+                                <div class="text-blue-400 mb-2"># Python & DSA Mastery</div>
+                                <div><span class="text-purple-400">def</span> <span
+                                        class="text-green-400">solve_problem</span>(difficulty):</div>
+                                <div class="pl-4 text-gray-300">if difficulty == <span
+                                        class="text-yellow-300">"hard"</span>:</div>
+                                <div class="pl-8 text-gray-300"><span class="text-purple-400">return</span> <span
+                                        class="text-yellow-300">"Job Ready!"</span></div>
+                                <div class="pl-4 text-gray-300"><span class="text-purple-400">else</span>:</div>
+                                <div class="pl-8 text-gray-300"><span class="text-purple-400">return</span>
+                                    practice_more()</div>
+                                <div class="mt-4"><span class="text-green-400">result</span> = solve_problem(<span
+                                        class="text-yellow-300">"hard"</span>)</div>
+                                <div class="text-gray-300"><span class="text-blue-400">print</span>(result) <span
+                                        class="text-gray-500"># Output: Job Ready!</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="absolute -top-6 -right-6 w-24 h-24 bg-gradient-to-r from-purple-600 to-cyan-500 rounded-full blur-2xl opacity-30 animate-pulse">
+                    </div>
+                    <div
+                        class="absolute -bottom-8 -left-8 w-32 h-32 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full blur-2xl opacity-30 animate-pulse delay-300">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Course Overview -->
+    <section id="course" class="py-16 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Course <span class="gradient-text">Overview</span></h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">Strategically designed 45-day curriculum to transform
+                    you from beginner to job-ready professional</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="card rounded-xl p-6 relative overflow-hidden group">
+                    <div class="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-purple-600 to-cyan-500"></div>
+                    <span
+                        class="text-4xl text-gray-700 font-bold absolute top-4 right-4 transition group-hover:text-gray-600">01</span>
+                    <h3 class="text-2xl font-bold mb-4 relative z-10">Python Fundamentals</h3>
+                    <p class="text-gray-300 mb-6 relative z-10">Master Python syntax, data types, functions, and OOP
+                        principles with hands-on practice.</p>
+                    <ul class="space-y-2 text-gray-400 relative z-10">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Variables & Data Types
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Control Flow & Loops
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Functions & Modules
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Object-Oriented Programming
+                        </li>
+                    </ul>
+                    <div class="mt-6">
+                        <span class="inline-block bg-gray-800 rounded-full px-4 py-1 text-sm text-gray-300">Days
+                            1-15</span>
+                    </div>
+                </div>
+
+                <div class="card rounded-xl p-6 relative overflow-hidden group">
+                    <div class="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-purple-600 to-cyan-500"></div>
+                    <span
+                        class="text-4xl text-gray-700 font-bold absolute top-4 right-4 transition group-hover:text-gray-600">02</span>
+                    <h3 class="text-2xl font-bold mb-4 relative z-10">Data Structures</h3>
+                    <p class="text-gray-300 mb-6 relative z-10">Learn to implement and utilize essential data structures
+                        for efficient problem-solving.</p>
+                    <ul class="space-y-2 text-gray-400 relative z-10">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Arrays & Lists
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Stacks & Queues
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Hash Tables & Sets
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Trees & Graphs
+                        </li>
+                    </ul>
+                    <div class="mt-6">
+                        <span class="inline-block bg-gray-800 rounded-full px-4 py-1 text-sm text-gray-300">Days
+                            16-30</span>
+                    </div>
+                </div>
+
+                <div class="card rounded-xl p-6 relative overflow-hidden group">
+                    <div class="absolute top-0 left-0 w-2 h-full bg-gradient-to-b from-purple-600 to-cyan-500"></div>
+                    <span
+                        class="text-4xl text-gray-700 font-bold absolute top-4 right-4 transition group-hover:text-gray-600">03</span>
+                    <h3 class="text-2xl font-bold mb-4 relative z-10">Algorithms & Problem Solving</h3>
+                    <p class="text-gray-300 mb-6 relative z-10">Master algorithmic thinking and tackle interview-style
+                        coding challenges with confidence.</p>
+                    <ul class="space-y-2 text-gray-400 relative z-10">
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Sorting & Searching
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Dynamic Programming
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            Graph Algorithms
+                        </li>
+                        <li class="flex items-center">
+                            <svg class="w-5 h-5 mr-2 text-green-500" fill="none" stroke="currentColor"
+                                viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                    d="M5 13l4 4L19 7"></path>
+                            </svg>
+                            System Design Basics
+                        </li>
+                    </ul>
+                    <div class="mt-6">
+                        <span class="inline-block bg-gray-800 rounded-full px-4 py-1 text-sm text-gray-300">Days
+                            31-45</span>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-12">
+                <button id="viewCurriculumBtn" class="btn-primary text-white font-bold py-3 px-8 rounded-full text-lg"
+                    onclick="showCurriculum()">
+                    View Full Curriculum
+                </button>
+            </div>
+            <div id="curriculumSection" class="hidden bg-gray-800 p-6 mt-6 rounded-lg">
+                <h3 class="text-2xl font-bold mb-4 text-white">Complete Curriculum</h3>
+                <p class="text-gray-300 mb-6">A structured 45-day learning plan covering Python fundamentals, Data
+                    Structures, and Algorithms.</p>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Week 1 -->
+                    <div class="p-6 bg-gray-900 rounded-lg shadow-md">
+                        <h4 class="text-xl font-bold text-purple-400 mb-4">Week 1: Python Fundamentals</h4>
+                        <ul class="text-gray-300 space-y-2">
+                            <li>✔️ Variables & Data Types</li>
+                            <li>✔️ Control Flow (Loops & Conditionals)</li>
+                            <li>✔️ Functions & Modules</li>
+                            <li>✔️ Object-Oriented Programming (OOP)</li>
+                            <li>✔️ File Handling & Exception Handling</li>
+                        </ul>
+                    </div>
+
+                    <!-- Week 2 -->
+                    <div class="p-6 bg-gray-900 rounded-lg shadow-md">
+                        <h4 class="text-xl font-bold text-cyan-400 mb-4">Week 2: Data Structures</h4>
+                        <ul class="text-gray-300 space-y-2">
+                            <li>✔️ Arrays & Lists</li>
+                            <li>✔️ Stacks & Queues</li>
+                            <li>✔️ Hash Tables & Sets</li>
+                            <li>✔️ Linked Lists</li>
+                            <li>✔️ Trees & Graphs</li>
+                        </ul>
+                    </div>
+
+                    <!-- Week 3 -->
+                    <div class="p-6 bg-gray-900 rounded-lg shadow-md">
+                        <h4 class="text-xl font-bold text-yellow-400 mb-4">Week 3: Algorithms & Problem Solving</h4>
+                        <ul class="text-gray-300 space-y-2">
+                            <li>✔️ Sorting & Searching Algorithms</li>
+                            <li>✔️ Recursion & Backtracking</li>
+                            <li>✔️ Dynamic Programming</li>
+                            <li>✔️ Graph Algorithms (DFS, BFS, Dijkstra's Algorithm)</li>
+                            <li>✔️ Greedy Algorithms & Divide and Conquer</li>
+                        </ul>
+                    </div>
+
+                    <!-- Week 4 -->
+                    <div class="p-6 bg-gray-900 rounded-lg shadow-md">
+                        <h4 class="text-xl font-bold text-pink-400 mb-4">Week 4: Competitive Programming & Problem
+                            Solving</h4>
+                        <ul class="text-gray-300 space-y-2">
+                            <li>✔️ LeetCode & CodeForces Practice</li>
+                            <li>✔️ Advanced Dynamic Programming Problems</li>
+                            <li>✔️ Real Interview Questions from FAANG</li>
+                            <li>✔️ System Design Basics</li>
+                            <li>✔️ Mock Interviews & Resume Building</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Course Highlights -->
+    <section id="highlights" class="py-20 bg-gray-800 relative overflow-hidden">
+        <div class="container mx-auto px-6 relative z-10">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Course <span class="gradient-text">Highlights</span>
+                </h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">What makes our program stand out from the rest</p>
+            </div>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="card rounded-xl p-6 text-center">
+                    <div
+                        class="w-16 h-16 mx-auto mb-6 flex items-center justify-center bg-gradient-to-r from-purple-600/20 to-cyan-500/20 rounded-full">
+                        <svg class="w-8 h-8 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">100+ Hours of Content</h3>
+                    <p class="text-gray-300">Comprehensive and structured learning path tailored for job readiness</p>
+                </div>
+
+                <div class="card rounded-xl p-6 text-center">
+                    <div
+                        class="w-16 h-16 mx-auto mb-6 flex items-center justify-center bg-gradient-to-r from-purple-600/20 to-cyan-500/20 rounded-full">
+                        <svg class="w-8 h-8 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Live Problem Solving</h3>
+                    <p class="text-gray-300">Real-time solutions and guidance for coding challenges through interactive
+                        sessions</p>
+                </div>
+
+                <div class="card rounded-xl p-6 text-center">
+                    <div
+                        class="w-16 h-16 mx-auto mb-6 flex items-center justify-center bg-gradient-to-r from-purple-600/20 to-cyan-500/20 rounded-full">
+                        <svg class="w-8 h-8 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">HackerRank Certificate</h3>
+                    <p class="text-gray-300">Showcase your skills with a verified certificate recognized by top
+                        employers</p>
+                </div>
+
+                <div class="card rounded-xl p-6 text-center">
+                    <div
+                        class="w-16 h-16 mx-auto mb-6 flex items-center justify-center bg-gradient-to-r from-purple-600/20 to-cyan-500/20 rounded-full">
+                        <svg class="w-8 h-8 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10">
+                            </path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold mb-4">Weekly Expert Sessions</h3>
+                    <p class="text-gray-300">Learn directly from experienced professionals at Microsoft & Google</p>
+                </div>
+            </div>
+
+            <div class="mt-16 bg-gradient-to-r from-gray-900 to-gray-800 rounded-xl overflow-hidden">
+                <div class="grid grid-cols-1 md:grid-cols-3">
+                    <div class="p-8 text-center border-b md:border-b-0 md:border-r border-gray-700">
+                        <h3 class="text-5xl font-bold gradient-text mb-2">45</h3>
+                        <p class="text-gray-300">Days of Intensive Learning</p>
+                    </div>
+                    <div class="p-8 text-center border-b md:border-b-0 md:border-r border-gray-700">
+                        <h3 class="text-5xl font-bold gradient-text mb-2">100+</h3>
+                        <p class="text-gray-300">Coding Challenges Solved</p>
+                    </div>
+                    <div class="p-8 text-center">
+                        <h3 class="text-5xl font-bold gradient-text mb-2">92%</h3>
+                        <p class="text-gray-300">Job Placement Rate</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="absolute top-0 right-0 w-1/3 h-1/3 bg-purple-600 rounded-full filter blur-3xl opacity-10"></div>
+        <div class="absolute bottom-0 left-0 w-1/3 h-1/3 bg-cyan-500 rounded-full filter blur-3xl opacity-10"></div>
+    </section>
+
+    <!-- Job Preparation Module -->
+    <section id="job-prep" class="py-20 bg-gray-900">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Job <span class="gradient-text">Preparation</span>
+                    Module</h2>
+                <p class="text-xl text-gray-300 max-w-3xl mx-auto">Everything you need to ace tech interviews and land
+                    your dream job</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div class="relative">
+                    <div
+                        class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-cyan-500 rounded-lg blur opacity-25">
+                    </div>
+                    <div class="relative bg-gray-800 p-8 rounded-lg">
+                        <h3 class="text-2xl font-bold mb-6">100+ Job-Ready Questions</h3>
+                        <p class="text-gray-300 mb-6">Master the most frequently asked interview questions from top tech
+                            companies.</p>
+                        <ul class="space-y-4">
+                            <li class="flex">
+                                <div
+                                    class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-purple-600/20 text-purple-500 mr-3">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                                <span class="text-gray-300">Data Structures & Algorithms</span>
+                            </li>
+                            <li class="flex">
+                                <div
+                                    class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-purple-600/20 text-purple-500 mr-3">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                                <span class="text-gray-300">System Design Fundamentals</span>
+                            </li>
+                            <li class="flex">
+                                <div
+                                    class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-purple-600/20 text-purple-500 mr-3">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                                <span class="text-gray-300">Behavioral Interview Tips</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <div
+                        class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-green-500 rounded-lg blur opacity-25">
+                    </div>
+                    <div class="relative bg-gray-800 p-8 rounded-lg">
+                        <h3 class="text-2xl font-bold mb-6">Mock Interviews & Resources</h3>
+                        <p class="text-gray-300 mb-6">Simulate real interviews and get access to curated resources to
+                            boost your confidence.</p>
+                        <ul class="space-y-4">
+                            <li class="flex">
+                                <div
+                                    class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-blue-600/20 text-blue-500 mr-3">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                                <span class="text-gray-300">One-on-One Mock Interviews</span>
+                            </li>
+                            <li class="flex">
+                                <div
+                                    class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-blue-600/20 text-blue-500 mr-3">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                                <span class="text-gray-300">Resume & LinkedIn Optimization</span>
+                            </li>
+                            <li class="flex">
+                                <div
+                                    class="flex-shrink-0 w-8 h-8 flex items-center justify-center rounded-full bg-blue-600/20 text-blue-500 mr-3">
+                                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                            d="M5 13l4 4L19 7"></path>
+                                    </svg>
+                                </div>
+                                <span class="text-gray-300">Exclusive Study Materials</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Meet Your Mentor -->
+    <section id="mentor">
+        <div class="container">
+            <h2 class="section-title">Meet Your Mentor</h2>
+            <div class="mentor-container">
+                <div class="mentor-img scale-in">
+                    <img src="images/mentor.png" alt="Course Mentor">
+                </div>
+                <div class="mentor-content fade-in">
+                    <h3 class="mentor-name">Alex Johnson</h3>
+                    <p class="mentor-title">Senior Software Engineer & Tech Educator</p>
+                    <p class="mentor-bio">Alex has over 8 years of experience as a Software Engineer at Google and
+                        Microsoft. He has helped hundreds of students land their dream jobs at top tech companies
+                        through his structured teaching approach and in-depth knowledge of algorithms and data
+                        structures.</p>
+                    <p>Alex specializes in Python, Data Structures, Algorithms, and System Design. His teaching
+                        methodology focuses on practical application rather than just theoretical knowledge.</p>
+
+                    <div class="mentor-stats">
+                        <div class="mentor-stat">
+                            <div class="mentor-stat-value">500+</div>
+                            <div class="mentor-stat-label">Students Placed</div>
+                        </div>
+                        <div class="mentor-stat">
+                            <div class="mentor-stat-value">8+</div>
+                            <div class="mentor-stat-label">Years Experience</div>
+                        </div>
+                        <div class="mentor-stat">
+                            <div class="mentor-stat-value">4.9</div>
+                            <div class="mentor-stat-label">Average Rating</div>
+                        </div>
+                        <div class="mentor-stat">
+                            <div class="mentor-stat-value">100+</div>
+                            <div class="mentor-stat-label">Interview Prep Sessions</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials">
+        <div class="container testimonials-container">
+            <h2 class="section-title">Success Stories</h2>
+            <div class="testimonial-slider">
+                <div class="testimonial-track" id="testimonialTrack">
+                    <!-- Testimonial 1 -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p class="testimonial-text">The Python + DSA Crash Course completely transformed my
+                                    career. Within 2 months of completing the course, I landed a job at Amazon with a
+                                    70% salary increase. The job preparation module was particularly helpful for
+                                    interview preparation.</p>
+                                <div class="testimonial-author">
+                                    <img src="images\testimonal1.png" alt="Sarah Williams"
+                                        class="testimonial-author-img">
+                                    <div>
+                                        <div class="testimonial-author-name">Sarah Williams</div>
+                                        <div class="testimonial-author-position">Software Engineer at Amazon</div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p class="testimonial-text">As someone with no prior programming experience, I was
+                                    skeptical about learning Python and DSA in just 45 days. However, the structured
+                                    approach and mentor support made it possible. Now I'm working as a backend developer
+                                    at a fintech startup!</p>
+                                <div class="testimonial-author">
+                                    <img src="images\testimonal2.png" alt="David Chen" class="testimonial-author-img">
+                                    <div>
+                                        <div class="testimonial-author-name">David Chen</div>
+                                        <div class="testimonial-author-position">Backend Developer at FinTech Inc.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="testimonial-slide">
+                        <div class="testimonial-card">
+                            <div class="testimonial-content">
+                                <p class="testimonial-text">The weekly expert sessions with Google and Microsoft
+                                    engineers gave me invaluable insights into what these companies look for. The
+                                    HackerRank certificate added credibility to my resume, and I received interview
+                                    calls from 5 top tech companies!</p>
+                                <div class="testimonial-author">
+                                    <img src="images\testimonal3.png" alt="Priya Sharma" class="testimonial-author-img">
+                                    <div>
+                                        <div class="testimonial-author-name">Priya Sharma</div>
+                                        <div class="testimonial-author-position">SDE at Microsoft</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-controls">
+                    <div class="testimonial-control" id="prevTestimonial">
+                        <i class="fas fa-chevron-left"></i>
+                    </div>
+                    <div class="testimonial-control" id="nextTestimonial">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+
+</html>
