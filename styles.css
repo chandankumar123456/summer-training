@@ -119,7 +119,7 @@ body {
 }
 
 .mentor-name {
-    margin-left: 20px;
+    margin-left: 50px;
     font-size: 36px;
     font-weight: 700;
     margin-bottom: 10px;
@@ -488,3 +488,115 @@ body {
     }
 }
 
+.custom-course-fee {
+    position: relative;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 50%, var(--primary) 100%);
+    color: #fff;
+    padding: 15px 35px;
+    border-radius: 50px;
+    font-weight: 700;
+    font-size: 1.1rem;
+    text-align: center;
+    margin-top: 20px;
+    display: inline-block;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2), 
+                inset 0 2px 3px rgba(255, 255, 255, 0.3);
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    overflow: hidden;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    z-index: 1;
+}
+
+.custom-course-fee::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.custom-course-fee::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 25%, rgba(255, 255, 255, 0.05) 50%, transparent 75%);
+    background-size: 200% 200%;
+    border-radius: inherit;
+    z-index: -1;
+    animation: shimmer 3s infinite linear;
+}
+
+.custom-course-fee:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.25), 
+                inset 0 2px 5px rgba(255, 255, 255, 0.5);
+    cursor: default;
+}
+
+.custom-course-fee:hover::before {
+    opacity: 1;
+    animation: pulse 2s infinite;
+}
+
+.custom-course-fee:active {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+}
+
+/* Animated dots after text can be added using a pseudo-element */
+.custom-course-fee.loading::after {
+    content: "...";
+    position: absolute;
+    right: 20px;
+    animation: loadingDots 1.5s infinite;
+}
+
+@keyframes shimmer {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 200% 200%;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        transform: scale(1);
+        opacity: 0.8;
+    }
+    50% {
+        transform: scale(1.05);
+        opacity: 1;
+    }
+}
+
+@keyframes loadingDots {
+    0%, 100% { opacity: 0.2; }
+    50% { opacity: 1; }
+}
+
+/* Optional: Add a special state class for emphasis */
+.custom-course-fee.featured {
+    background: linear-gradient(135deg, #ff7a18 0%, #af002d 50%, #319197 100%);
+    animation: gradientShift 5s infinite alternate;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+    100% {
+        background-position: 100% 50%;
+    }
+}
