@@ -79,13 +79,9 @@ document.addEventListener('DOMContentLoaded', function () {
     const nextButton = document.getElementById('nextTestimonial');
     let currentIndex = 0;
     const totalSlides = slides.length;
-    const visibleCount = 3;
+    const visibleCount = window.innerWidth < 768 ? 1 : 3;
+    
 
-    // Function to move slides
-    // function moveSlides() {
-    //     track.style.transition = "transform 0.6s ease-in-out";
-    //     track.style.transform = `translateX(-${currentIndex * 100}%)`;
-    // }
     function moveSlides() {
         const shiftPercentage = currentIndex * (100 / visibleCount);
         track.style.transition = "transform 0.6s ease-in-out";

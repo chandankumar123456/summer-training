@@ -482,4 +482,8 @@ body {
         width: 40px;
         height: 40px;
     }
+    .testimonial-slide {
+        flex: 0 0 100%;
+    }
 }
+
