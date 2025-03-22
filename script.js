@@ -41,7 +41,7 @@ function showCurriculum() {
 
 // Enroll now function
 function enrollNow() {
-    window.location.href = "https://forms.gle/YOUR_GOOGLE_FORM_LINK";
+    window.location.href = "https://forms.gle/eC2u1RQGGxV7UHYY7";
 }
 
 // Scroll to curriculum section
