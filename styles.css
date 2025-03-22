@@ -197,7 +197,8 @@ body {
 .testimonial-track {
     display: flex;
     transition: transform 2.5s ease-in-out;
-    width: 1000%; /* Increase width to accommodate all testimonials */
+    width: 1000%;
+    /* Increase width to accommodate all testimonials */
 }
 
 .testimonial-slide {
@@ -364,18 +365,18 @@ body {
     .flex-wrap {
         flex-wrap: wrap;
     }
-    
+
     /* Adjust text size for smaller screens */
     .text-sm {
         font-size: 0.875rem;
         line-height: 1.25rem;
     }
-    
+
     /* Adjust spacing for smaller screens */
     .mt-8 {
         margin-top: 1.5rem;
     }
-    
+
     /* Ensure the images are visible but not too large on small screens */
     .w-10.h-10 {
         width: 2rem;
@@ -387,6 +388,7 @@ body {
 .remove-decorative-circle {
     display: none;
 }
+
 /* Updated Testimonials CSS */
 
 .testimonial-slider {
@@ -471,9 +473,11 @@ body {
     .testimonial-card {
         max-width: 90%;
     }
+
     .testimonial-text {
         font-size: 16px;
     }
+
     .testimonial-author-img {
         width: 40px;
         height: 40px;

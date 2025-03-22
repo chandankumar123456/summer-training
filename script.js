@@ -19,7 +19,7 @@ function smoothScroll(event, targetId) {
             behavior: 'smooth'
         });
     }
-    
+
     // Close mobile menu if open
     const mobileMenu = document.getElementById('mobileMenu');
     if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
@@ -52,11 +52,11 @@ function scrollToCurriculum() {
             top: courseSection.offsetTop - 80,
             behavior: 'smooth'
         });
-        
+
         // Show curriculum if hidden
         const curriculumSection = document.getElementById('curriculumSection');
         if (curriculumSection && curriculumSection.classList.contains('hidden')) {
-            setTimeout(function() {
+            setTimeout(function () {
                 showCurriculum();
             }, 500);
         }
@@ -69,8 +69,8 @@ function positionSlides() {
 }
 
 
-document.addEventListener('DOMContentLoaded', function() {
-    
+document.addEventListener('DOMContentLoaded', function () {
+
 
 
     const track = document.getElementById('testimonialTrack');
@@ -79,8 +79,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const nextButton = document.getElementById('nextTestimonial');
     let currentIndex = 0;
     const totalSlides = slides.length;
-    const visibleCount = 3; 
-    
+    const visibleCount = 3;
+
     // Function to move slides
     // function moveSlides() {
     //     track.style.transition = "transform 0.6s ease-in-out";
@@ -135,9 +135,9 @@ document.addEventListener('DOMContentLoaded', function() {
     // Mobile menu toggle functionality
     const mobileMenuButton = document.getElementById('mobileMenuButton');
     const mobileMenu = document.getElementById('mobileMenu');
-    
+
     if (mobileMenuButton && mobileMenu) {
-        mobileMenuButton.addEventListener('click', function() {
+        mobileMenuButton.addEventListener('click', function () {
             mobileMenu.classList.toggle('hidden');
         });
     }
@@ -147,14 +147,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const mobileContactBtn = document.getElementById('mobileContactBtn');
     const contactModal = document.getElementById('contactModal');
     const closeModal = document.getElementById('closeModal');
-    
+
     if (contactUsBtn && contactModal && closeModal) {
-        contactUsBtn.addEventListener('click', function() {
+        contactUsBtn.addEventListener('click', function () {
             contactModal.classList.remove('hidden');
         });
-        
+
         if (mobileContactBtn) {
-            mobileContactBtn.addEventListener('click', function() {
+            mobileContactBtn.addEventListener('click', function () {
                 contactModal.classList.remove('hidden');
                 // Close mobile menu if open
                 if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
@@ -162,40 +162,40 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         }
-        
-        closeModal.addEventListener('click', function() {
+
+        closeModal.addEventListener('click', function () {
             contactModal.classList.add('hidden');
         });
-        
+
         // Close modal when clicking outside of it
-        window.addEventListener('click', function(event) {
+        window.addEventListener('click', function (event) {
             if (event.target === contactModal) {
                 contactModal.classList.add('hidden');
             }
         });
     }
-    
+
     // View curriculum button functionality
     const viewCurriculumBtn = document.getElementById('viewCurriculumBtn');
     if (viewCurriculumBtn) {
         viewCurriculumBtn.addEventListener('click', showCurriculum);
     }
-    
+
     // Enroll now button functionality
     const enrollBtns = document.querySelectorAll('.enroll-btn');
-    enrollBtns.forEach(function(btn) {
+    enrollBtns.forEach(function (btn) {
         btn.addEventListener('click', enrollNow);
     });
-    
+
     // Navigation link smooth scrolling
     const navLinks = document.querySelectorAll('a[href^="#"]');
-    navLinks.forEach(function(link) {
-        link.addEventListener('click', function(e) {
+    navLinks.forEach(function (link) {
+        link.addEventListener('click', function (e) {
             const targetId = this.getAttribute('href').substring(1);
             smoothScroll(e, targetId);
         });
     });
-    
+
     // Initialize any sliders or carousels if needed
     // Example: initializeTestimonialSlider();
 });
