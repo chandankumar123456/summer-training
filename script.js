@@ -1,3 +1,14 @@
+// Curriculum section toggle
+function showCurriculum() {
+    const curriculumSection = document.getElementById('curriculumSection');
+    if (curriculumSection) {
+        curriculumSection.classList.toggle('hidden');
+        const viewCurriculumBtn = document.getElementById('viewCurriculumBtn');
+        if (viewCurriculumBtn) {
+            viewCurriculumBtn.textContent = curriculumSection.classList.contains('hidden') ? 'View Full Curriculum' : 'Hide Curriculum';
+        }
+    }
+}
 // Smooth scroll function
 function smoothScroll(event, targetId) {
     event.preventDefault();
@@ -51,8 +62,57 @@ function scrollToCurriculum() {
         }
     }
 }
+function positionSlides() {
+    const track = document.getElementById('testimonialTrack');
+    track.style.transition = "transform 0.6s ease-in-out"; // Ensure smooth transition
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+}
+
 
 document.addEventListener('DOMContentLoaded', function() {
+    
+
+    const track = document.getElementById('testimonialTrack');
+    const slides = document.querySelectorAll('.testimonial-slide');
+    const prevButton = document.getElementById('prevTestimonial');
+    const nextButton = document.getElementById('nextTestimonial');
+    let currentIndex = 0;
+    const totalSlides = slides.length; // Count testimonials
+
+    // Function to move slides
+    function moveSlides() {
+        track.style.transition = "transform 0.6s ease-in-out"; // Smooth scrolling
+        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+
+    // Auto-scroll function
+    function startAutoScroll() {
+        return setInterval(() => {
+            currentIndex = (currentIndex + 1) % totalSlides; // Loop through all testimonials
+            moveSlides();
+        }, 5000); // Adjust speed by changing this value
+    }
+
+    // Start auto-scrolling
+    let autoScroll = startAutoScroll();
+
+    // Button navigation
+    prevButton.addEventListener('click', () => {
+        currentIndex = currentIndex > 0 ? currentIndex - 1 : totalSlides - 1;
+        moveSlides();
+    });
+
+    nextButton.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % totalSlides;
+        moveSlides();
+    });
+
+    // Stop auto-scroll when hovered
+    track.addEventListener('mouseenter', () => clearInterval(autoScroll));
+    track.addEventListener('mouseleave', () => autoScroll = startAutoScroll());
+
+
+
     // Mobile menu toggle functionality
     const mobileMenuButton = document.getElementById('mobileMenuButton');
     const mobileMenu = document.getElementById('mobileMenu');
