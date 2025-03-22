@@ -65,32 +65,44 @@ function scrollToCurriculum() {
 function positionSlides() {
     const track = document.getElementById('testimonialTrack');
     track.style.transition = "transform 0.6s ease-in-out"; // Ensure smooth transition
-    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    track.style.transform = `translateX(-${currentIndex * (100 / 3)}%)`;
 }
 
 
 document.addEventListener('DOMContentLoaded', function() {
     
 
+
     const track = document.getElementById('testimonialTrack');
     const slides = document.querySelectorAll('.testimonial-slide');
     const prevButton = document.getElementById('prevTestimonial');
     const nextButton = document.getElementById('nextTestimonial');
     let currentIndex = 0;
-    const totalSlides = slides.length; // Count testimonials
-
+    const totalSlides = slides.length;
+    const visibleCount = 3; 
+    
     // Function to move slides
+    // function moveSlides() {
+    //     track.style.transition = "transform 0.6s ease-in-out";
+    //     track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    // }
     function moveSlides() {
-        track.style.transition = "transform 0.6s ease-in-out"; // Smooth scrolling
-        track.style.transform = `translateX(-${currentIndex * 100}%)`;
+        const shiftPercentage = currentIndex * (100 / visibleCount);
+        track.style.transition = "transform 0.6s ease-in-out";
+        track.style.transform = `translateX(-${shiftPercentage}%)`;
     }
 
     // Auto-scroll function
     function startAutoScroll() {
         return setInterval(() => {
-            currentIndex = (currentIndex + 1) % totalSlides; // Loop through all testimonials
+            // If currentIndex reaches the last complete set, reset to 0
+            if (currentIndex >= totalSlides - visibleCount) {
+                currentIndex = 0;
+            } else {
+                currentIndex++;
+            }
             moveSlides();
-        }, 5000); // Adjust speed by changing this value
+        }, 5000);
     }
 
     // Start auto-scrolling
@@ -98,19 +110,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Button navigation
     prevButton.addEventListener('click', () => {
-        currentIndex = currentIndex > 0 ? currentIndex - 1 : totalSlides - 1;
+        if (currentIndex === 0) {
+            currentIndex = totalSlides - visibleCount;
+        } else {
+            currentIndex--;
+        }
         moveSlides();
     });
 
     nextButton.addEventListener('click', () => {
-        currentIndex = (currentIndex + 1) % totalSlides;
+        if (currentIndex >= totalSlides - visibleCount) {
+            currentIndex = 0;
+        } else {
+            currentIndex++;
+        }
         moveSlides();
     });
 
     // Stop auto-scroll when hovered
     track.addEventListener('mouseenter', () => clearInterval(autoScroll));
     track.addEventListener('mouseleave', () => autoScroll = startAutoScroll());
-
 
 
     // Mobile menu toggle functionality
